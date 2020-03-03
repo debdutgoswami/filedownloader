@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block heading %}TECHQUIZ'19 Certificates{% endblock %}
+
+{% block body %}
+<!-- Form -->
+<form method="POST" action="/" id="f1" style="padding: 2%;">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputEmail4">Email</label>
+            <input type="email" name="email" class="form-control" id="inputEmail4" required>
+            <small id="inputEmail4" class="form-text text-muted">Email used for registering in TechQuiz</small>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputPhone">Year</label>
+          <select id="year" name="year" class="form-control" required>
+              <option value="FIRST">1ST</option>
+              <option value="SECOND">2ND</option>
+              <option value="THIRD">3RD</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputPhone">Department</label>
+            <select id="dept" name="dept" class="form-control" required>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+                <option value="EE">EE</option>
+                <option value="ME">ME</option>
+                <option value="AEIE">AEIE</option>
+            </select>
+          </div>
+    </div>
+    <br>
+
+    <!-- Submit Button -->
+    <input class="btn btn-primary" type="submit" value="Submit" style="text-align: center; text-align: center;">
+</form>
+{% endblock %}
