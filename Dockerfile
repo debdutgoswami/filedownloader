@@ -2,11 +2,11 @@
 FROM python:3.7
 
 # 2
-RUN pip install Flask==1.1.1 gunicorn
+COPY . /app
+WORKDIR /app
 
 # 3
-COPY src/ /app
-WORKDIR /app
+RUN pip install -r requirements.txt
 
 # 4
 ENV PORT 8080
