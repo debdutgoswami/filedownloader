@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, make_response, send_file
+from flask import Flask, render_template, request, make_response, send_from_directory
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def home():
     else:
         dept, email, year = dict(request.form)['dept'], dict(request.form)['email'], dict(request.form)['year']
         try:
-            return send_file(os.path.join(os.path.dirname(__file__),"certificate",f"{year} {dept}",f"{email}.pdf"))
+            return send_from_directory("certificate",f"{year} {dept}",f"{email}.pdf")
         except FileNotFoundError:
             return "file not found"
 
